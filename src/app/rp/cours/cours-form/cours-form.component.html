@@ -1,0 +1,53 @@
+<div class="container-xl px-4 mt-4">
+    <div class="row">
+        
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Ajouter un nouveau cours</div>
+                <div class="card-body">
+                    <form #coursForm (ngSubmit)="onSubmit()">
+                    
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Module</label>
+                                <select class="form-select" [(ngModel)]="selectedModule" name="module"  aria-label="Default select example">
+                                    <option *ngFor="let m of modules" [ngValue]="m">{{m.libelle}}</option>
+                                  </select>
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Classe</label>
+                                <select class="form-select" [(ngModel)]="selectedClasse"  name="classe" aria-label="Default select example">
+                                    <option *ngFor="let c of classes" [ngValue]="c">{{c.libelle}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">nombre d'heure</label>
+                                <select class="form-select" [(ngModel)]="selectedHeure" name="heure" aria-label="Default select example">
+                                    <option *ngFor="let h of heures" [value]="h" >{{h}}</option>
+                                  </select>
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Semestre</label>
+                                <select class="form-select" [(ngModel)]="selectedSemestre" name="semestre"  aria-label="Default select example">
+                                    <option *ngFor="let s of semestres" [ngValue]="s" >{{s.libelle}}</option>
+                                </select>
+                            </div>
+                        </div>
+                       
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="submit">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

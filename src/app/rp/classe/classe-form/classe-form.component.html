@@ -1,0 +1,33 @@
+<div class="container-xl px-4 mt-4">  
+    <div class="row">
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Ajouter une nouvelle classe</div>
+                <div class="card-body">
+                    <form #classForm="ngForm" (ngSubmit)="onSubmit()">
+                        
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Niveau</label>
+                                <select [(ngModel)]="selectedNiveau" name="niveau" class="form-select" aria-label="Default select example">
+                                    <option *ngFor="let n of niveaux" [value]="n">{{n}}</option>
+                                  </select>
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Filiere</label>
+                                <input class="form-control" name="filiere" [(ngModel)]="classe.filiere" id="inputLastName" type="text" placeholder="GLRS">
+                            </div>
+                        </div>
+                        
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="submit">Creer Classe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

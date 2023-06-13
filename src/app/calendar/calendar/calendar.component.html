@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="calendar">
+      <div class="header">
+        <button class="prev" (click)="prev()">&lt;</button>
+        <div>{{ currentMonth }}</div>
+        <button class="next" (click)="next()">&gt;</button>
+      </div>
+      <div class="weekdays">
+        <div *ngFor="let day of weekdays">{{ day }}</div>
+      </div>
+      <div class="days">
+        <div *ngFor="let week of calendar">
+          <div *ngFor="let day of week" class="day" (click)="addEvent(day)">
+            <div class="date">{{ day.day }}</div>
+            <div class="events">
+              <div *ngFor="let event of day.events" class="event" (click)="editEvent(event)">
+                {{ event.title }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--{# <div class="modal" [ngClass]="{ 'is-active': showModal }">
+    <div class="modal-background" (click)="closeModal()"></div>
+    <div class="modal-content">
+      <div class="box">
+        <h1>{{ modalTitle }}</h1>
+        <form>
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" [(ngModel)]="eventTitle" name="title" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input class="input" type="date" [(ngModel)]="eventDate" name="date" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Time</label>
+            <div class="control">
+              <input class="input" type="time" [(ngModel)]="eventTime" name="time" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea class="textarea" [(ngModel)]="eventDescription" name="description"></textarea>
+            </div>
+          </div>
+          <button class="button" (click)="saveEvent()" [disabled]="!eventTitle || !eventDate">Save</button>
+          <button class="button is-danger" *ngIf="currentEvent" (click)="deleteEvent()">Delete</button>
+          <button class="button is-link" (click)="closeModal()">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="closeModal()"></button>
+  </div> #}-->
+  

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="header-title pb-3 mt-0">Payments</h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr class="align-self-center">
+                                    <th>Prénom et Nom</th>
+                                    <th>Email</th>
+                                    <th>Mot de passe</th>
+                                    <th>Classe</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let e of etudiant">
+                                    <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="thumb-sm rounded-circle mr-2"> {{e.prenom}}{{e.nom}}</td>
+                                    <td>{{e.email}}</td>
+                                    <td>{{e.password}}</td>
+                                    <td>{{e.classe.libelle}}</td>
+                                    <td>
+                                        <a (click)="onUpdate(e.id)" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="px-2 text-primary"><i class="bx bx-pencil font-size-18"></i></a>
+                                        <a (click)="onDelete(e.id)" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" class="px-2 text-danger"><i class="bx bx-trash-alt font-size-18"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                    <!--end table-responsive-->
+                    <div class="pt-3 border-top text-right"><a href="#" class="text-primary">View all <i class="mdi mdi-arrow-right"></i></a></div>
+
+                </div>
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
